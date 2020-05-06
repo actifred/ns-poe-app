@@ -8,7 +8,15 @@ import { Component } from "@angular/core";
 export class EnteteComponent {
     private annee = 2020;
 
-    public afficheAnnee() {
+    public afficheDate() {
         return Date();
+    }
+
+    public afficheAnnee() {
+        return this.annee;
+    }
+
+    public augmenteAnnee() {
+        this.annee++;
     }
 }
