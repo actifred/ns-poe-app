@@ -16,7 +16,8 @@ export class EnteteComponent {
         return this.annee;
     }
 
-    public augmenteAnnee() {
-        this.annee++;
+    public augmenteAnnee(valeur) {
+        console.log(valeur);
+        this.annee += valeur;
     }
 }

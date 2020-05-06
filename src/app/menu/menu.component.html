@@ -1,5 +1,5 @@
 <nav>
-    <h3>{{ myTitle }}</h3>
+    <h3>{{ myTitle }} ({{ compteur }})</h3>
 <ul>
     <li>
         <a href="https://google.com">Google</a>
@@ -8,4 +8,5 @@
         <a href="https://qwant.com">Qwant</a>
     </li>
 </ul>
+<button (click)="avancer($event)">En avant</button>
 </nav>

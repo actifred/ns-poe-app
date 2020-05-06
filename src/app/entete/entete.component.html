@@ -1,6 +1,6 @@
 <div class="entete">Bienvenue, la date actuelle est <span>{{ afficheAnnee() }}</span></div>
 <div>Version avec binding: <span [textContent]="afficheDate()"></span></div>
 <div>Version 2: <span textContent="mon binding est: {{ afficheDate() }}"></span></div>
-<button (click)="augmenteAnnee()">Vers le futur</button>
+<button (click)="augmenteAnnee(1)">Vers le futur</button>
 
-<nat-menu titre="Menu Principal"></nat-menu>
+<nat-menu titre="Menu Principal" (avancementEvent)="augmenteAnnee($event)"></nat-menu>

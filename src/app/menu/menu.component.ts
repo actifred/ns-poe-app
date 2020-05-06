@@ -1,4 +1,4 @@
-import { Component, Input } from "@angular/core";
+import { Component, Input, Output, EventEmitter } from "@angular/core";
 
 @Component({
     selector: 'nat-menu',
@@ -7,4 +7,14 @@ import { Component, Input } from "@angular/core";
 })
 export class MenuComponent {
     @Input('titre') myTitle = "Mon menu";
+
+    public compteur = 0;
+
+    @Output() avancementEvent = new EventEmitter();
+
+    public avancer(detailEvenement) {
+        console.log('Clic reçu', detailEvenement);
+        this.compteur++;
+        this.avancementEvent.emit(this.compteur);
+    }
 }
