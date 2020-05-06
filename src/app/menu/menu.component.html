@@ -1,11 +1,8 @@
 <nav>
     <h3>{{ myTitle }} ({{ compteur }})</h3>
 <ul>
-    <li>
-        <a href="https://google.com">Google</a>
-    </li>
-    <li>
-        <a href="https://qwant.com">Qwant</a>
+    <li *ngFor="let lien of liens">
+        <a [href]="lien.url" [textContent]="lien.intitule"></a>
     </li>
 </ul>
 <button (click)="avancer($event)">En avant</button>
