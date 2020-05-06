@@ -15,13 +15,13 @@ export class EnteteComponent {
 
     constructor() {
       this.liens = [
-        { url: 'https://apple.com', intitule: 'Apple' },
-        { url: 'https://google.com', intitule: 'Google' }
+        { url: 'https://apple.com', intitule: 'apple' },
+        { url: 'https://google.com', intitule: 'google' }
       ];
     }
 
     public afficheDate() {
-        return Date();
+        return Date.now();
     }
 
     public afficheAnnee() {

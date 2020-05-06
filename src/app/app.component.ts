@@ -14,9 +14,9 @@ export class AppComponent {
 
   constructor() {
     this.liens = [
-      { url: 'https://bing.com', intitule: 'Bing' },
-      { url: 'https://amazon.com', intitule: 'Amazon' },
-      { url: 'https://qwant.com', intitule: 'Qwant' }
+      { url: 'https://bing.com', intitule: 'bing' },
+      { url: 'https://amazon.com', intitule: 'amazon' },
+      { url: 'https://qwant.com', intitule: 'qwant' }
     ];
   }
 }
