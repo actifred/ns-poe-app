@@ -1,7 +1,11 @@
 <nav>
     <h3>{{ myTitle }} ({{ compteur }})</h3>
 <ul>
-    <li *ngFor="let lien of liens">
+    <li *ngFor="let lien of liens"
+        [ngClass]="{
+            'voyelle': isVoyelle(lien),
+            'consonne': !isVoyelle(lien)
+        }">
         <a [href]="lien.url" [textContent]="lien.intitule"></a>
     </li>
 </ul>

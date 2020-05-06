@@ -15,6 +15,10 @@ nav ul li {
     display: block;
 }
 
+nav ul li.voyelle {
+    border-color: blue;
+}
+
 a {
     text-decoration: none;
 }

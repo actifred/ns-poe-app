@@ -23,4 +23,19 @@ export class MenuComponent {
         this.compteur++;
         this.avancementEvent.emit(this.compteur);
     }
+
+    public isVoyelle(lien: ObjetLien) {
+        switch (lien.intitule[0].toLowerCase()) {
+            case 'a':
+            case 'e':
+            case 'i':
+            case 'o':
+            case 'u':
+            case 'y':
+                return true;
+                break;
+            default:
+                return false;
+        }
+    }
 }

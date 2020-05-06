@@ -9,6 +9,8 @@ import { ObjetLien } from '../shared/structures';
 export class EnteteComponent {
     private annee = 2020;
 
+    public isVersion2Visible = true;
+
     public liens: ObjetLien[];
 
     constructor() {
@@ -17,6 +19,7 @@ export class EnteteComponent {
         { url: 'https://google.com', intitule: 'Google' }
       ];
     }
+
     public afficheDate() {
         return Date();
     }
@@ -28,5 +31,9 @@ export class EnteteComponent {
     public augmenteAnnee(valeur) {
         console.log(valeur);
         this.annee += valeur;
+    }
+
+    public toggleVisibility() {
+        this.isVersion2Visible = !this.isVersion2Visible;
     }
 }
