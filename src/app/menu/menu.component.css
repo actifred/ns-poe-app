@@ -1,0 +1,28 @@
+nav {
+    padding: 5px;
+    margin: 5px;
+    background-color: beige;
+}
+
+nav ul li {
+    padding: 2px;
+    margin: 2px;
+    color: darkcyan;
+    background-color:yellow;
+    display: inline;
+    border-color: tomato;
+    border-style: dashed;
+    display: block;
+}
+
+a {
+    text-decoration: none;
+}
+
+.sidebar {
+    float: right;
+}
+
+.content {
+    float: left;
+}
