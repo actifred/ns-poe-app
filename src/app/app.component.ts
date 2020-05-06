@@ -7,4 +7,5 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   public titre = 'Nat Poe';
+  public titreMenu = 'Le joli menu';
 }
