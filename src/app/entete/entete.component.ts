@@ -6,5 +6,9 @@ import { Component } from "@angular/core";
     templateUrl: './entete.component.html'
 })
 export class EnteteComponent {
-    public annee = 2020;
+    private annee = 2020;
+
+    public afficheAnnee() {
+        return Date();
+    }
 }
