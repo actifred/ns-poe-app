@@ -1,9 +1,5 @@
 import { Component, Input, Output, EventEmitter } from "@angular/core";
-
-interface ObjetLien {
-    url: string,
-    intitule: string
-}
+import { ObjetLien } from '../shared/structures';
 
 @Component({
     selector: 'nat-menu',
@@ -15,13 +11,9 @@ export class MenuComponent {
 
     public compteur = 0;
 
-    public liens: ObjetLien[];
+    @Input() liens: ObjetLien[];
 
     constructor() {
-        this.liens = [
-            { url: 'https://bing.com', intitule: 'Bing' },
-            { url: 'https://qwant.com', intitule: 'Qwant' }
-        ];
     }
 
     @Output() avancementEvent = new EventEmitter();

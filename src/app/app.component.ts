@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ObjetLien } from './shared/structures';
 
 @Component({
   selector: 'nat-root',
@@ -8,4 +9,13 @@ import { Component } from '@angular/core';
 export class AppComponent {
   public titre = 'Nat Poe';
   public titreMenu = 'Le joli menu';
+
+  public liens: ObjetLien[];
+
+  constructor() {
+    this.liens = [
+      { url: 'https://bing.com', intitule: 'Bing' },
+      { url: 'https://qwant.com', intitule: 'Qwant' }
+    ];
+  }
 }

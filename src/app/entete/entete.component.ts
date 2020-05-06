@@ -1,4 +1,5 @@
 import { Component } from "@angular/core";
+import { ObjetLien } from '../shared/structures';
 
 @Component({
     selector: 'nat-entete',
@@ -8,6 +9,14 @@ import { Component } from "@angular/core";
 export class EnteteComponent {
     private annee = 2020;
 
+    public liens: ObjetLien[];
+
+    constructor() {
+      this.liens = [
+        { url: 'https://apple.com', intitule: 'Apple' },
+        { url: 'https://google.com', intitule: 'Google' }
+      ];
+    }
     public afficheDate() {
         return Date();
     }
