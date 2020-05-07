@@ -12,6 +12,7 @@ import { FormUserComponent } from './form-user/form-user.component';
 import { LiensService } from './services/liens.service';
 import { UserListComponent } from './user-list/user-list.component';
 import { UserCardComponent } from './user-card/user-card.component';
+import { UserManagerService } from './services/user-manager.service';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,7 @@ import { UserCardComponent } from './user-card/user-card.component';
     FormsModule,
     HttpClientModule
   ],
-  providers: [ LiensService ],
+  providers: [ LiensService, UserManagerService ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
