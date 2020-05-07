@@ -1,0 +1,18 @@
+.user-card {
+    border: solid 1px #888888;
+    box-shadow: 2px 2px 3px rgba(100,100,100,0.25);
+    margin: 5px;
+    padding: 20px;
+    width: 400px;
+    min-height: 100px;
+}
+
+.user-name {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 18px;
+}
+
+.user-avatar {
+    border-radius: 50%;
+    float: right;
+}

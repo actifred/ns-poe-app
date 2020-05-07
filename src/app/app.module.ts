@@ -9,6 +9,8 @@ import { MajusculePipe } from './pipes/majuscule.pipe';
 import { FormLienComponent } from './form-lien/form-lien.component';
 import { FormUserComponent } from './form-user/form-user.component';
 import { LiensService } from './services/liens.service';
+import { UserListComponent } from './user-list/user-list.component';
+import { UserCardComponent } from './user-card/user-card.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +19,9 @@ import { LiensService } from './services/liens.service';
     MenuComponent,
     MajusculePipe,
     FormLienComponent,
-    FormUserComponent
+    FormUserComponent,
+    UserListComponent,
+    UserCardComponent
   ],
   imports: [
     BrowserModule,
