@@ -1,10 +1,11 @@
-import { Component } from "@angular/core";
+import { Component, ChangeDetectionStrategy } from "@angular/core";
 import { ObjetLien } from '../shared/structures';
 
 @Component({
     selector: 'nat-entete',
     styleUrls: [ './entete.component.css' ],
-    templateUrl: './entete.component.html'
+    templateUrl: './entete.component.html',
+    changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class EnteteComponent {
     private annee = 2020;
