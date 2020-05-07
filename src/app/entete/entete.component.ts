@@ -1,24 +1,28 @@
-import { Component, ChangeDetectionStrategy } from "@angular/core";
+import { Component } from "@angular/core";
 import { ObjetLien } from '../shared/structures';
+import { LiensService } from '../services/liens.service';
+import { Subscription } from 'rxjs';
 
 @Component({
     selector: 'nat-entete',
     styleUrls: [ './entete.component.css' ],
-    templateUrl: './entete.component.html',
-    changeDetection: ChangeDetectionStrategy.OnPush
+    templateUrl: './entete.component.html'
 })
 export class EnteteComponent {
     private annee = 2020;
 
     public isVersion2Visible = true;
 
-    public liens: ObjetLien[];
+    public liens: ObjetLien[] = [];
 
-    constructor() {
-      this.liens = [
-        { url: 'https://apple.com', intitule: 'apple' },
-        { url: 'https://google.com', intitule: 'google' }
-      ];
+    private abonnement : Subscription;
+
+    constructor(private ls: LiensService) {
+      this.abonnement = this.ls.getLiens().subscribe(
+          liens => {
+              this.liens = liens;
+          }
+      );
     }
 
     public afficheDate() {
@@ -36,5 +40,9 @@ export class EnteteComponent {
 
     public toggleVisibility() {
         this.isVersion2Visible = !this.isVersion2Visible;
+    }
+
+    ngOnDestroy() {
+        this.abonnement.unsubscribe();
     }
 }

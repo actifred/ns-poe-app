@@ -1,20 +1,26 @@
-import { Component } from '@angular/core';
+import { Component, OnDestroy } from '@angular/core';
 import { ObjetLien } from './shared/structures';
 import { LiensService } from './services/liens.service';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'nat-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent {
+export class AppComponent implements OnDestroy {
   public titre = 'Nat Poe';
   public titreMenu = 'Le joli menu';
 
-  public liens: ObjetLien[];
+  public liens: ObjetLien[] = [];
+
+  private abonnement : Subscription;
 
   constructor(private liensService: LiensService) {
-    this.liens = this.liensService.getLiens();
+    this.abonnement = this.liensService.getLiens().subscribe(
+      (nouveauxLiens) => {
+        this.liens = nouveauxLiens;
+      });
   }
 
   addLinkToMenu(nouveauLien) {
@@ -25,4 +31,9 @@ export class AppComponent {
     }
     this.liens.push(newLink);
   }
+
+  ngOnDestroy() {
+    this.abonnement.unsubscribe();
+  }
+
 }

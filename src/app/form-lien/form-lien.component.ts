@@ -1,4 +1,6 @@
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { LiensService } from '../services/liens.service';
+import { ObjetLien } from '../shared/structures';
 
 @Component({
   selector: 'nat-form-lien',
@@ -7,15 +9,17 @@ import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 })
 export class FormLienComponent implements OnInit {
 
-  @Output() ajouteLien = new EventEmitter()
-
-  constructor() { }
+  constructor(private liensService: LiensService) { }
 
   ngOnInit(): void {
   }
 
   soumetLien(valeur) {
-    this.ajouteLien.emit(valeur);
+    let nouveauLien: ObjetLien = {
+      url: valeur.adresse,
+      intitule: valeur.titre
+    }
+    this.liensService.addLien(nouveauLien);
   }
 
 }
