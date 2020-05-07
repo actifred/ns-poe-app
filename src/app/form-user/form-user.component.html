@@ -5,6 +5,12 @@
     (ngSubmit) = "traiteFormulaire(formulaire.value)"
     *ngIf="formulaire"
     >
+    <div>
+        <span  *ngIf="formulaire.controls.prenom.errors?.impair" class="erreur">Le prénom doit être pair</span><br/>
+        <span  *ngIf="formulaire.controls.prenom.errors?.troplong" class="erreur">Le prénom doit faire moins de 8 caractères</span><br/>
+        <span  *ngIf="formulaire.controls.nom.errors" class="erreur">Le nom est incorrect</span><br/>
+        <span  *ngIf="formulaire.controls.email.errors" class="erreur">L'email est incorrect</span><br/>
+    </div>
     <label for="prenom">Prénom</label>
     <input type="text" name="prenom" formControlName="prenom"><br/>
     <label for="nom">Nom</label>

@@ -2,3 +2,7 @@ input.ng-invalid {
     border: 1px solid red;
     background-color: yellow;
 }
+
+.erreur {
+    color: maroon;
+}
