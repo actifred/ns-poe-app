@@ -21,6 +21,11 @@ export class AppComponent {
   }
 
   addLinkToMenu(nouveauLien) {
-    this.liens.push(nouveauLien);
+    console.log('Recu depuis le formulaire', nouveauLien);
+    let newLink = {
+      intitule: nouveauLien.titre,
+      url: nouveauLien.adresse
+    }
+    this.liens.push(newLink);
   }
 }
