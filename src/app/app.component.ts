@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { ObjetLien } from './shared/structures';
+import { LiensService } from './services/liens.service';
 
 @Component({
   selector: 'nat-root',
@@ -12,12 +13,8 @@ export class AppComponent {
 
   public liens: ObjetLien[];
 
-  constructor() {
-    this.liens = [
-      { url: 'https://bing.com', intitule: 'bing' },
-      { url: 'https://amazon.com', intitule: 'amazon' },
-      { url: 'https://qwant.com', intitule: 'qwant' }
-    ];
+  constructor(private liensService: LiensService) {
+    this.liens = this.liensService.getLiens();
   }
 
   addLinkToMenu(nouveauLien) {

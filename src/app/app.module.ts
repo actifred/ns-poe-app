@@ -8,6 +8,7 @@ import { MenuComponent } from './menu/menu.component';
 import { MajusculePipe } from './pipes/majuscule.pipe';
 import { FormLienComponent } from './form-lien/form-lien.component';
 import { FormUserComponent } from './form-user/form-user.component';
+import { LiensService } from './services/liens.service';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,7 @@ import { FormUserComponent } from './form-user/form-user.component';
     ReactiveFormsModule,
     FormsModule
   ],
-  providers: [],
+  providers: [ LiensService ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
