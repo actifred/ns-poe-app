@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { Validators, FormBuilder } from '@angular/forms';
 
 const EMAIL_REGEXP = '^([a-zA-Z0-9_\\-\\.]+)@google\\.fr$';
 
@@ -9,15 +9,15 @@ const EMAIL_REGEXP = '^([a-zA-Z0-9_\\-\\.]+)@google\\.fr$';
   styleUrls: ['./form-user.component.css']
 })
 export class FormUserComponent implements OnInit {
-  public formulaire: FormGroup;
+  public formulaire;
 
-  constructor() { }
+  constructor(private fb: FormBuilder) { }
 
   ngOnInit(): void {
-    this.formulaire = new FormGroup({
-      prenom: new FormControl('Paul', this.champsPairEtPasTropLong),
-      nom: new FormControl('', Validators.compose([Validators.required, this.champsPairEtPasTropLong])),
-      email: new FormControl(
+    this.formulaire = this.fb.group({
+      prenom: this.fb.control('Paul', this.champsPairEtPasTropLong),
+      nom: this.fb.control('', Validators.compose([Validators.required, this.champsPairEtPasTropLong])),
+      email: this.fb.control(
         '',
         Validators.compose([
           Validators.pattern(EMAIL_REGEXP),
