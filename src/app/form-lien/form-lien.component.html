@@ -1,0 +1,11 @@
+<h3>Ajouter un lien</h3>
+<form
+    #monFormulaire="ngForm"
+    (ngSubmit)="soumetLien(monFormulaire.value)"
+    >
+    <label for="intitule">Intitulé</label>
+    <input type="text" name="intitule" ngModel ><br/>
+    <label for="url">Adresse web</label>
+    <input type="text" name="url" ngModel ><br/>
+    <button type="submit">Ajouter</button>
+</form>

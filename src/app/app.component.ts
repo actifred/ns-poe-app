@@ -19,4 +19,8 @@ export class AppComponent {
       { url: 'https://qwant.com', intitule: 'qwant' }
     ];
   }
+
+  addLinkToMenu(nouveauLien) {
+    this.liens.push(nouveauLien);
+  }
 }
