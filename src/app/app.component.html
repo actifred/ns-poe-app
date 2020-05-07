@@ -3,9 +3,8 @@
 <nat-menu [titre]="titreMenu" [liens]="liens"></nat-menu>
 </div>
 <div class="content">
-<h1>Salut tout le monde</h1>
-<p>Ceci est mon composant racine pour l'application {{ titre }}</p>
 
-<nat-form-lien></nat-form-lien>
+<button (click)="toggleFormVisibility()">Ajout de lien</button>
+<nat-form-lien *ngIf="formulaireLienVisible"></nat-form-lien>
 
 </div>

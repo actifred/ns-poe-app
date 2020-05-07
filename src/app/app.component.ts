@@ -16,11 +16,17 @@ export class AppComponent implements OnDestroy {
 
   private abonnement : Subscription;
 
+  public formulaireLienVisible = false;
+
   constructor(private liensService: LiensService) {
     this.abonnement = this.liensService.getLiens().subscribe(
       (nouveauxLiens) => {
         this.liens = nouveauxLiens;
       });
+  }
+
+  public toggleFormVisibility() {
+    this.formulaireLienVisible = !this.formulaireLienVisible;
   }
 
   addLinkToMenu(nouveauLien) {

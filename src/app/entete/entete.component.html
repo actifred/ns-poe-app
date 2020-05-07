@@ -1,10 +1,12 @@
 <div class="entete">Bienvenue, la date actuelle est <span>{{ afficheAnnee() }}</span></div>
 <div>Version avec binding: <span [textContent]="afficheDate()"></span></div>
+<div *ngIf="false">
 <div *ngIf="isVersion2Visible">Version 2:
     <span textContent="mon binding est: {{ afficheDate() | date:'shortDate' }}"></span></div>
 <button (click)="toggleVisibility()">Version 2</button>
+</div>
 
-<nat-menu 
+<nat-menu *ngIf="false"
     titre="Menu Principal"
     (avancementEvent)="augmenteAnnee($event)"
     [liens]="liens"
