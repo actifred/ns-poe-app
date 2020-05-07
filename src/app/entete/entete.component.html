@@ -1,5 +1,4 @@
 <div class="entete">Bienvenue, la date actuelle est <span>{{ afficheAnnee() }}</span></div>
-<div>Version avec binding: <span [textContent]="afficheDate()"></span></div>
 <div *ngIf="false">
 <div *ngIf="isVersion2Visible">Version 2:
     <span textContent="mon binding est: {{ afficheDate() | date:'shortDate' }}"></span></div>
