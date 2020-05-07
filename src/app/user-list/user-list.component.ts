@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { UserManagerService } from '../services/user-manager.service';
 
 @Component({
   selector: 'nat-user-list',
@@ -10,18 +10,17 @@ export class UserListComponent implements OnInit {
 
   public users = [];
 
-  constructor(private httpClient: HttpClient) { }
+  constructor(private userManager: UserManagerService) { }
 
   ngOnInit(): void {
 
   }
 
   public loadUsers() {
-    this.httpClient
-        .get('https://randomuser.me/api/?results=20')
+    this.userManager.getUsers(25)
         .subscribe(
-            (res: any) => {
-                this.users = res.results;
+            res => {
+                this.users = res;
             },
             erreur => {
                 console.log('ERREUR SUR LE GET', erreur);
