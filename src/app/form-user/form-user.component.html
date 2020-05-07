@@ -1,0 +1,15 @@
+<h2>Inserer un utilisateur</h2>
+
+<form
+    [formGroup]="formulaire"
+    (ngSubmit) = "traiteFormulaire(formulaire.value)"
+    *ngIf="formulaire"
+    >
+    <label for="prenom">Prénom</label>
+    <input type="text" name="prenom" formControlName="prenom"><br/>
+    <label for="nom">Nom</label>
+    <input type="text" name="nom" formControlName="nom"><br/>
+    <label for="email">Email</label>
+    <input type="text" name="email" formControlName="email"><br/>
+    <button type="submit" [disabled]="!formulaire.valid">Ajouter</button>
+</form>
