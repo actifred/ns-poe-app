@@ -10,7 +10,7 @@ describe('workspace-project App', () => {
 
   it('should display welcome message', () => {
     page.navigateTo();
-    expect(page.getTitleText()).toEqual('ns-poe-app app is running!');
+    expect(page.getTitleText()).toContain('Bienvenue, la date actuelle est 2020');
   });
 
   afterEach(async () => {
