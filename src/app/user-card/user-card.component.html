@@ -1,7 +1,7 @@
 <div class="user-card">
     <div class="user-name">
         <img class="user-avatar" [src]="currentUser.picture.thumbnail">
-    <p>{{ currentUser.name.title }} {{ currentUser.name.first }} {{ currentUser.name.last }}</p>
+    <p>{{ currentUser | userFullName }}</p>
         <p>Email: {{ currentUser.email }}</p>
         <p>Phone: {{ currentUser.phone }}</p>
     </div>

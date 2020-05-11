@@ -15,6 +15,7 @@ import { UserListComponent } from './user-list/user-list.component';
 import { UserCardComponent } from './user-card/user-card.component';
 import { UserManagerService } from './services/user-manager.service';
 import { UserDetailComponent } from './user-detail/user-detail.component';
+import { UserFullNamePipe } from './pipes/user-full-name.pipe';
 
 const appRoutes: Routes = [
   { 
@@ -42,7 +43,8 @@ const appRoutes: Routes = [
     FormUserComponent,
     UserListComponent,
     UserCardComponent,
-    UserDetailComponent
+    UserDetailComponent,
+    UserFullNamePipe
   ],
   imports: [
     BrowserModule,
