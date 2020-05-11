@@ -22,7 +22,7 @@ const appRoutes: Routes = [
     component: UserListComponent
   },
   { 
-    path: 'detail',
+    path: 'detail/:userName',
     component: UserDetailComponent
   },
   {

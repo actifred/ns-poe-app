@@ -14,4 +14,8 @@ export class UserCardComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  getUserDetailUrl() {
+    return `/detail/${this.currentUser.login.username}`;
+  }
+
 }
