@@ -6,7 +6,7 @@
             'voyelle': isVoyelle(lien),
             'consonne': !isVoyelle(lien)
         }">
-        <a [href]="lien.url">{{ lien.intitule | majuscule }}</a>
+        <a [routerLink]="lien.url">{{ lien.intitule | majuscule }}</a>
     </li>
 </ul>
 <button (click)="avancer($event)">En avant</button>

@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http'
+import { RouterModule, Routes } from '@angular/router';
 
 import { AppComponent } from './app.component';
 import { EnteteComponent } from './entete/entete.component';
@@ -13,6 +14,23 @@ import { LiensService } from './services/liens.service';
 import { UserListComponent } from './user-list/user-list.component';
 import { UserCardComponent } from './user-card/user-card.component';
 import { UserManagerService } from './services/user-manager.service';
+import { UserDetailComponent } from './user-detail/user-detail.component';
+
+const appRoutes: Routes = [
+  { 
+    path: 'users',
+    component: UserListComponent
+  },
+  { 
+    path: 'detail',
+    component: UserDetailComponent
+  },
+  {
+    path: '',
+    pathMatch: 'full',
+    redirectTo: 'users'
+  }
+];
 
 @NgModule({
   declarations: [
@@ -23,13 +41,15 @@ import { UserManagerService } from './services/user-manager.service';
     FormLienComponent,
     FormUserComponent,
     UserListComponent,
-    UserCardComponent
+    UserCardComponent,
+    UserDetailComponent
   ],
   imports: [
     BrowserModule,
     ReactiveFormsModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    RouterModule.forRoot(appRoutes)
   ],
   providers: [ LiensService, UserManagerService ],
   bootstrap: [AppComponent]

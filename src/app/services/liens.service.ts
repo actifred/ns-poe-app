@@ -7,9 +7,8 @@ export class LiensService {
 
     constructor() {
         this.liens = [
-            { url: 'https://bing.com', intitule: 'bing' },
-            { url: 'https://amazon.com', intitule: 'amazon' },
-            { url: 'https://qwant.com', intitule: 'qwant' }
+            { url: '/', intitule: 'Accueil' },
+            { url: '/detail', intitule: 'Details' }
           ];
           this.liens$ = new BehaviorSubject<ObjetLien[]>(this.liens);
     }
