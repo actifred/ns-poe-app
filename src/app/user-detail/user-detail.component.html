@@ -1,3 +1,4 @@
 <p>Détails pour l'utilisateur {{ currentUserName }}</p>
-
-<a routerLink="/detail/utilisateurSuivant">Suivant</a>
+<div *ngIf="currentUser">
+    <h3>{{currentUser.name.first}} {{currentUser.name.last}}</h3>
+</div>

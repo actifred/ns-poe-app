@@ -24,4 +24,15 @@ export class UserManagerService {
                 })
             );
     }
+
+    public getUserByUserName(username: string) {
+        if (this.users.length === 0) {
+            return null;
+        }
+        return this.users.find(
+            (utilisateur) => {
+                return utilisateur.login.username === username;
+            }
+        );
+    }
 }
