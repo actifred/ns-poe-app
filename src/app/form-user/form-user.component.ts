@@ -9,11 +9,9 @@ const EMAIL_REGEXP = '^([a-zA-Z0-9_\\-\\.]+)@google\\.fr$';
   styleUrls: ['./form-user.component.css']
 })
 export class FormUserComponent implements OnInit {
-  public formulaire;
+  public formulaire = null;
 
-  constructor(private fb: FormBuilder) { }
-
-  ngOnInit(): void {
+  constructor(private fb: FormBuilder) {
     this.formulaire = this.fb.group({
       prenom: this.fb.control('Paul', this.champsPairEtPasTropLong),
       nom: this.fb.control('', Validators.compose([Validators.required, this.champsPairEtPasTropLong])),
@@ -24,6 +22,9 @@ export class FormUserComponent implements OnInit {
           Validators.required
         ]))
     });
+  }
+
+  ngOnInit(): void {
   }
 
   private champsPairEtPasTropLong(controle) {

@@ -1,6 +1,8 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { FormLienComponent } from './form-lien.component';
+import { LiensService } from '../services/liens.service';
+import { FormsModule } from '@angular/forms';
 
 describe('FormLienComponent', () => {
   let component: FormLienComponent;
@@ -8,7 +10,9 @@ describe('FormLienComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ FormLienComponent ]
+      declarations: [ FormLienComponent ],
+      imports: [ FormsModule ],
+      providers: [ LiensService ]
     })
     .compileComponents();
   }));
