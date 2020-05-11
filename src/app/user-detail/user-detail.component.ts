@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Params } from '@angular/router';
+import { ActivatedRoute, Params, Router } from '@angular/router';
 import { UserManagerService } from '../services/user-manager.service';
 
 @Component({
@@ -15,6 +15,7 @@ export class UserDetailComponent implements OnInit {
 
   constructor(
     private activatedRoute: ActivatedRoute,
+    private router: Router,
     private userManager: UserManagerService) { }
 
   ngOnInit(): void {
@@ -24,6 +25,18 @@ export class UserDetailComponent implements OnInit {
         this.currentUser = this.userManager.getUserByUserName(this.currentUserName);
       }
     );
+  }
+
+  nextUser() {
+    const nextUser = this.userManager.getNextUser(this.currentUserName);
+    console.log('Next user is', nextUser);
+    if (nextUser) {
+      this.router.navigate(
+        ['detail', nextUser.login.username]);
+    } else {
+      console.log(`Il n'y a pas d'autre utilisateur`);
+    }
+    // aller vers la route /detail/(nextUser.login.username) 
   }
 
 }

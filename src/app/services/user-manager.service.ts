@@ -35,4 +35,20 @@ export class UserManagerService {
             }
         );
     }
+
+    public getNextUser(username: string) {
+        let nextUserIndex = -1;
+        if (this.users.length === 0) {
+            return null;
+        }
+        this.users.forEach( (user, index) => {
+            if ( user.login.username === username) {
+                nextUserIndex = index + 1;
+            }
+        });
+        if (nextUserIndex > -1 && nextUserIndex < this.users.length) {
+            return this.users[nextUserIndex];
+        }
+        return null;
+    }
 }
